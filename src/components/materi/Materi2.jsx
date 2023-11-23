@@ -21,7 +21,8 @@ const Materi2 = () => {
     ];
 
     const kurangUmur = () => {
-        setUmur(umur - 1);
+
+        if(umur > 0) setUmur(umur - 1);
     };
 
     const tambahUmur = () => {
@@ -67,16 +68,16 @@ const Materi2 = () => {
                             <p className="text-start mt-2 ms-1 mb-0">Hobi: </p>
                             <ul>
                                 {umur <= 25
-                                    ? hobbyMuda.map((item, index) => {
+                                    ? hobbyMuda.map((item, index) => (
                                         <li className="text-start" key={index}>
                                             {item}
                                         </li>
-                                    })
-                                    : hobbyTua.map((item, index) => {
+                                    ))
+                                    : hobbyTua.map((item, index) => (
                                         <li className="text-start" key={index}>
                                             {item}
                                         </li>
-                                    })
+                                    ))
                                 }
                             </ul>
                         </div>
